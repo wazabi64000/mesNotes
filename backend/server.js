@@ -7,7 +7,8 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.send(
-    `<h1>Mon super serveur qui fonctionne grace à la bénidiction de Nissrine</h1>`,
+    `<h1>Mon super serveur qui fonctionne grace à la bénidiction de Nissrine</h1><br>
+    <h2>Mon super serveur qui fonctionne grace à la bénidiction de Nissrine</h2>`,
   );
 });
 
