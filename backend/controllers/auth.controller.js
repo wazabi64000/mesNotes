@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 import {z} from 'zod'
 import { createProfessor, findUserByEmail } from '../models/user.model.js'
-
+import { sendWelcomeEmail } from '../config/mailer.js'
 
 export const authSchema = z.object({
     email: z.email().min(3, "l'email doit contenir en moins 3 caracteres"),
@@ -19,5 +19,7 @@ export const register =  async (req, res) => {
         const hashed =  await argon2.hash(password)
         const id = await createProfessor(email, hashed)
 
-       res.status(201).json({message: "Professeur créé ", id, email}) 
+        await sendWelcomeEmail(email, email, password)
+
+       res.status(201).json({message: "Professeur créé un email à été envoyé ", id, email}) 
 }
