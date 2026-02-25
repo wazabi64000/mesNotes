@@ -19,7 +19,7 @@ export const register =  async (req, res) => {
         const hashed =  await argon2.hash(password)
         const id = await createProfessor(email, hashed)
 
-        await sendWelcomeEmail(email, email, password)
+       // await sendWelcomeEmail(email, email, password)
 
        res.status(201).json({message: "Professeur créé un email à été envoyé ", id, email}) 
 }

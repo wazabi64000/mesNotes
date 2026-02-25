@@ -123,3 +123,17 @@ export const requireProfessor = (req, res, next) => {
 
 ```
 
+
+
+src/
+ ├── api/
+ │    └── axios.js
+ |__ components
+ |     L Navbar.jsx
+       L Footer.jsx
+ ├── pages/
+ │    └── Register.jsx
+ ├── schemas/
+ │    └── auth.schema.js
+ └── App.jsx
+
